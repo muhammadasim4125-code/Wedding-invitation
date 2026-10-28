@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahmed &amp; Ayesha – Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d4af37;--gold2:#f3e2a0;--ivory:#fbf6e9;--green:#0b2e22;--green2:#05140e;--ink:#12382b;
+--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--script:'Great Vibes','Brush Script MT',cursive;--urdu:'Noto Nastaliq Urdu','Jameel Noori Nastaleeq','Noto Naskh Arabic',serif;
+box-sizing:border-box;color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--green:#0b2e22;--green2:#05140e}}
+:root[data-theme="dark"]{--green:#0b2e22;--green2:#05140e}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;overflow:hidden;background:var(--green2);color:var(--ivory);font-family:var(--serif)}
+body{background:radial-gradient(ellipse at 50% 40%,var(--green) 0%,var(--green2) 75%)}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.ur{font-family:var(--urdu);line-height:2.1;direction:rtl}
+.gold{background:linear-gradient(100deg,#b8902a,var(--gold2) 45%,#b8902a 70%,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:sheen 6s linear infinite}
+@keyframes sheen{to{background-position:-200% 0}}
+/* floral frame */
+.frame{position:fixed;inset:0;z-index:2;pointer-events:none}
+.cn{position:absolute;width:min(44vw,260px);height:min(44vw,260px);opacity:0;transform:scale(.2) rotate(-25deg)}
+.cn.tl{top:0;left:0;transform-origin:0 0}.cn.tr{top:0;right:0;transform-origin:100% 0;--f:-1}
+.cn.bl{bottom:0;left:0;transform-origin:0 100%;--g:-1}.cn.br{bottom:0;right:0;transform-origin:100% 100%;--f:-1;--g:-1}
+.frame.show .cn{animation:bloom 2.6s cubic-bezier(.2,.8,.2,1) forwards,sway 7s ease-in-out 2.6s infinite}
+.frame.show .tr{animation-delay:.3s,2.9s}.frame.show .bl{animation-delay:.6s,3.2s}.frame.show .br{animation-delay:.9s,3.5s}
+@keyframes bloom{to{opacity:1;transform:scale(var(--f,1),var(--g,1))}}
+@keyframes sway{50%{transform:scale(var(--f,1),var(--g,1)) rotate(2deg)}}
+/* scenes */
+.scene{position:fixed;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(70px,12vh,110px) 7vw;opacity:0;visibility:hidden;transition:opacity 1.4s ease,visibility 1.4s}
+.scene.on{opacity:1;visibility:visible}
+.rv{opacity:0}
+.on .rv{animation:rise 1.5s var(--d,0s) cubic-bezier(.2,.7,.2,1) both}
+.on .zm{animation:zoom 2s var(--d,0s) cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes zoom{from{opacity:0;transform:scale(.6);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+.lt{display:inline-block;opacity:0}
+.on .lt{animation:lt 1.3s var(--d) cubic-bezier(.2,.7,.2,1) both}
+@keyframes lt{from{opacity:0;transform:translateY(40px) scale(1.5);filter:blur(14px)}to{opacity:1;transform:none;filter:none}}
+/* start */
+#s0{z-index:5;transition:opacity 1.6s}
+.open{margin-top:2.2rem;font:600 1.1rem var(--serif);letter-spacing:.2em;color:var(--gold2);background:transparent;border:1px solid var(--gold);padding:1rem 2.2rem;border-radius:2px;cursor:pointer;animation:pulse 2.4s ease-in-out infinite}
+.open:hover,.open:focus-visible{background:rgba(212,175,55,.14);outline:none}
+@keyframes pulse{50%{box-shadow:0 0 28px rgba(212,175,55,.45)}}
+.hint{opacity:.7;font-style:italic;margin-top:.8rem;font-size:1rem}
+/* s1 title */
+.rose{width:clamp(110px,26vw,170px);height:clamp(110px,26vw,170px);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bis{font-size:clamp(1.6rem,6vw,2.6rem);margin:.4rem 0 0}
+.t1{font:400 clamp(2.6rem,11vw,5rem)/1.1 var(--script);margin:.4rem 0}
+.t2{font-size:clamp(1rem,3.6vw,1.35rem);letter-spacing:.35em;color:var(--gold2)}
+.t3{font-size:clamp(1.3rem,5vw,2rem);color:var(--gold2)}
+.line{width:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1rem auto}
+.on .line{animation:grow 2.4s var(--d,0s) ease forwards}
+@keyframes grow{to{width:min(70vw,360px)}}
+/* names */
+.nm{font:400 clamp(3.4rem,17vw,7.5rem)/1.05 var(--script);color:var(--gold2)}
+.nu{font-size:clamp(1.5rem,6vw,2.4rem);color:var(--gold)}
+.amp{font:italic 400 clamp(1.8rem,7vw,3rem) var(--serif);color:var(--ivory);margin:.2rem 0}
+.par{font-size:clamp(.95rem,3.3vw,1.15rem);opacity:.85;font-style:italic;max-width:30ch}
+/* invitation */
+.card{position:relative;width:min(88vw,460px);background:var(--ivory);color:var(--ink);padding:clamp(1.4rem,5vh,2.4rem) 1.4rem;border:1px solid var(--gold);outline:1px solid var(--gold);outline-offset:-9px;box-shadow:0 0 70px rgba(212,175,55,.3);opacity:0}
+.on .card{animation:cardin 2.2s .6s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes cardin{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:none}}
+.card p{margin:.45rem 0}.card .ur{color:#0f4a36;font-size:clamp(1.05rem,4.2vw,1.3rem)}
+.card .big{font:400 clamp(2rem,9vw,3rem)/1.2 var(--script);color:#9a7612}
+.doors{position:fixed;inset:0;display:flex;z-index:4;pointer-events:none}
+.doors i{flex:1;background:linear-gradient(135deg,#0b2e22,#06170f);border-right:1px solid var(--gold);transform:none}
+.doors i:last-child{border:0;border-left:1px solid var(--gold)}
+.doors{visibility:hidden}.on .doors{visibility:visible;animation:hide 0s 3.4s forwards}
+@keyframes hide{to{visibility:hidden}}
+.on .doors i:first-child{animation:dl 2.2s .2s cubic-bezier(.7,0,.2,1) forwards}
+.on .doors i:last-child{animation:dr 2.2s .2s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes dl{to{transform:translateX(-101%)}}@keyframes dr{to{transform:translateX(101%)}}
+/* details */
+.ev{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;width:100%}
+.evc{width:min(86vw,360px);padding:1.1rem 1rem;border:1px solid var(--gold);background:rgba(5,20,14,.72);backdrop-filter:blur(4px);box-shadow:0 0 40px rgba(212,175,55,.15)}
+.evc h2{font:400 clamp(1.9rem,8vw,2.6rem)/1.2 var(--script);color:var(--gold2)}
+.evc .ur{color:var(--gold);font-size:1.15rem}
+.evc p{margin:.25rem 0;font-size:clamp(1rem,3.8vw,1.2rem)}
+.evc .d{font-size:clamp(1.15rem,4.6vw,1.4rem);font-weight:600;color:var(--ivory)}
+.evc .v{color:var(--gold2)}
+.evc .a{font-size:.95rem;opacity:.8;font-style:italic}
+.evc a{color:var(--gold2);font-size:.9rem;letter-spacing:.1em}
+.sx{font:italic 1.1rem var(--serif);opacity:.8;margin-bottom:.8rem}
+/* closing */
+.dua{font-size:clamp(1.5rem,6vw,2.3rem);color:var(--gold2);max-width:20em}
+.fin{font:400 clamp(2.6rem,12vw,4.6rem)/1.15 var(--script);margin:.4rem 0}
+.btn{font:600 1rem var(--serif);letter-spacing:.18em;color:var(--gold2);background:transparent;border:1px solid var(--gold);padding:.8rem 1.8rem;cursor:pointer;margin-top:1.6rem;border-radius:2px}
+.btn:hover,.btn:focus-visible{background:rgba(212,175,55,.16);outline:none}
+/* controls */
+.ctl{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);right:12px;z-index:9;display:flex;gap:8px}
+.ctl button{font:600 .9rem var(--serif);letter-spacing:.08em;color:var(--gold2);background:rgba(5,20,14,.7);border:1px solid var(--gold);padding:.5rem .9rem;border-radius:20px;cursor:pointer}
+.ctl button:focus-visible{outline:2px solid var(--gold2)}
+.ctl{opacity:0;pointer-events:none;transition:opacity 1s}.ctl.show{opacity:1;pointer-events:auto}
+@media (max-height:700px){.scene{padding-top:60px;padding-bottom:30px}.evc{padding:.7rem}}
+@media (prefers-reduced-motion:reduce){.cn,.rose{animation-duration:.01s!important}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs id="defs"></defs></svg>
+
+<div class="frame" id="frame">
+  <svg class="cn tl" viewBox="0 0 200 200"><use href="#corner"/></svg>
+  <svg class="cn tr" viewBox="0 0 200 200"><use href="#corner"/></svg>
+  <svg class="cn bl" viewBox="0 0 200 200"><use href="#corner"/></svg>
+  <svg class="cn br" viewBox="0 0 200 200"><use href="#corner"/></svg>
+</div>
+
+<div class="ctl" id="ctl">
+  <button id="mus" aria-label="Play or pause music">♪ Music</button>
+  <button id="rep" aria-label="Replay invitation">↻ Replay</button>
+</div>
+
+<!-- 0: Start -->
+<section class="scene on" id="s0">
+  <svg class="rose" viewBox="-50 -50 100 100"><use href="#rose"/></svg>
+  <p class="ur gold" style="font-size:1.6rem;margin-top:.6rem">دعوتِ نکاح و ولیمہ</p>
+  <p class="hint">A wedding invitation</p>
+  <button class="open" id="go">OPEN INVITATION</button>
+  <p class="hint">Tap to begin · sound on for the full experience</p>
+</section>
+
+<!-- 1: Title -->
+<section class="scene" id="s1">
+  <svg class="rose zm" viewBox="-50 -50 100 100" style="--d:.2s"><use href="#rose"/></svg>
+  <p class="ur bis gold rv" style="--d:1.2s">بسم اللہ الرحمٰن الرحیم</p>
+  <div class="line" style="--d:1.8s"></div>
+  <h1 class="t1 gold zm" style="--d:2.4s">Wedding Invitation</h1>
+  <p class="t2 rv" style="--d:3.8s">WITH THE BLESSINGS OF ALLAH</p>
+  <p class="ur t3 rv" style="--d:4.6s">شادی کی دعوت</p>
+</section>
+
+<!-- 2: Names -->
+<section class="scene" id="s2">
+  <p class="sx rv" style="--d:.2s" id="intro"></p>
+  <div class="nm" id="gn"></div>
+  <p class="ur nu rv" style="--d:1.6s" id="gu"></p>
+  <p class="amp zm" style="--d:2.4s">&amp;</p>
+  <div class="nm" id="bn"></div>
+  <p class="ur nu rv" style="--d:4.4s" id="bu"></p>
+  <div class="line" style="--d:5s"></div>
+  <p class="par rv" style="--d:5.4s" id="gp"></p>
+  <p class="par rv" style="--d:5.9s" id="bp"></p>
+</section>
+
+<!-- 3: Invitation -->
+<section class="scene" id="s3">
+  <div class="doors"><i></i><i></i></div>
+  <div class="card">
+    <p class="ur">آپ کو اور آپ کے اہلِ خانہ کو دلی دعوت دی جاتی ہے</p>
+    <p style="font-size:1.1rem;letter-spacing:.04em" id="inv"></p>
+    <p class="big" id="cpl"></p>
+    <p class="ur" id="cplu"></p>
+    <p style="font-style:italic" id="msg"></p>
+  </div>
+</section>
+
+<!-- 4: Details -->
+<section class="scene" id="s4">
+  <p class="sx rv" style="--d:.2s">Join us for the celebrations</p>
+  <div class="ev" id="ev"></div>
+</section>
+
+<!-- 5: Closing -->
+<section class="scene" id="s5">
+  <svg class="rose zm" viewBox="-50 -50 100 100" style="--d:.2s"><use href="#rose"/></svg>
+  <p class="ur dua gold rv" style="--d:1s">بارک اللہ لکما و بارک علیکما و جمع بینکما فی خیر</p>
+  <p class="par rv" style="--d:2.2s">May Allah bless you both and unite you in goodness.</p>
+  <div class="line" style="--d:2.8s"></div>
+  <p class="fin gold zm" style="--d:3.2s">Jazakallah Khair</p>
+  <p class="par rv" style="--d:4.4s" id="fam"></p>
+  <p class="par rv" style="--d:4.8s" id="rsvp"></p>
+  <button class="btn rv" style="--d:5.4s" id="rep2">↻ REPLAY</button>
+</section>
+
+<script>
+/* ============ EDIT YOUR WEDDING DETAILS HERE ============ */
+const W = {
+  intro: "Together with their families",
+  groom: {en:"Ahmed", ur:"احمد", parents:"Son of Mr. & Mrs. Tariq Mehmood Khan", parentsUr:""},
+  bride: {en:"Ayesha", ur:"عائشہ", parents:"Daughter of Mr. & Mrs. Imran Ali Malik", parentsUr:""},
+  invite: "request the honour of your presence at the Nikah of their beloved children",
+  message: "Your presence and duas will make our day complete.",
+  events: [
+    {en:"Nikah", ur:"نکاح", date:"Saturday, 12 December 2026", dateUr:"ہفتہ، ۱۲ دسمبر ۲۰۲۶",
+     time:"4:00 PM", timeUr:"شام ۴ بجے", venue:"Royal Palm Banquet Hall", address:"Clifton, Karachi", map:""},
+    {en:"Walima", ur:"ولیمہ", date:"Sunday, 13 December 2026", dateUr:"اتوار، ۱۳ دسمبر ۲۰۲۶",
+     time:"7:30 PM (Dinner 8:30 PM)", timeUr:"رات ۷:۳۰ بجے", venue:"Grand Marquee Lawn", address:"DHA Phase 6, Karachi", map:""}
+  ],
+  families: "With love, the Khan & Malik families",
+  rsvp: "RSVP: +92 300 0000000"
+};
+/* ========================================================= */
+const $=s=>document.querySelector(s), NS='http://www.w3.org/2000/svg';
+/* ---- floral symbols ---- */
+function flower(x,y,r,n,rot){let s=`<g transform="translate(${x} ${y}) rotate(${rot||0})">`;
+  for(let k=0;k<2;k++){const m=k?.62:1,c=k?'#f3e2a0':'#fbf6e9';
+    for(let i=0;i<n;i++)s+=`<ellipse rx="${r*.26*m}" ry="${r*.5*m}" cy="${-r*.5*m}" transform="rotate(${i*360/n+k*180/n})" fill="${c}" fill-opacity="${k?.95:.85}" stroke="#d4af37" stroke-width=".7"/>`;}
+  return s+`<circle r="${r*.14}" fill="#d4af37"/></g>`}
+function leaf(x,y,a,l){return `<ellipse cx="${x}" cy="${y}" rx="${l}" ry="${l*.38}" transform="rotate(${a} ${x} ${y})" fill="#1f6b4c" stroke="#d4af37" stroke-width=".6"/>`}
+$('#defs').innerHTML=
+`<symbol id="corner" viewBox="0 0 200 200">
+<path d="M0 150C45 150 65 115 72 75 80 40 110 22 165 12" fill="none" stroke="#d4af37" stroke-width="1.6"/>
+<path d="M150 0C130 40 95 55 70 60 40 66 28 90 22 140" fill="none" stroke="#d4af37" stroke-width="1" opacity=".7"/>
+${leaf(60,120,-60,16)}${leaf(78,90,-20,15)}${leaf(100,45,-40,15)}${leaf(135,22,-10,14)}${leaf(30,100,70,14)}${leaf(45,135,20,13)}
+${flower(42,42,40,9,10)}${flower(120,28,22,8)}${flower(24,118,22,8,20)}${flower(84,78,14,7)}
+<circle cx="168" cy="10" r="4" fill="#d4af37"/><circle cx="10" cy="160" r="4" fill="#d4af37"/></symbol>
+<symbol id="rose" viewBox="-50 -50 100 100">${flower(0,0,44,12)}${flower(0,0,28,8,15)}${flower(0,0,14,6)}</symbol>`;
+/* ---- fill content ---- */
+function letters(el,t,d0){el.innerHTML=[...t].map((c,i)=>`<span class="lt" style="--d:${(d0+i*.14).toFixed(2)}s">${c}</span>`).join('')}
+function fill(){
+  $('#intro').textContent=W.intro;
+  letters($('#gn'),W.groom.en,.5);letters($('#bn'),W.bride.en,3.0);
+  $('#gu').textContent=W.groom.ur;$('#bu').textContent=W.bride.ur;
+  $('#gp').textContent=W.groom.parents;$('#bp').textContent=W.bride.parents;
+  $('#inv').textContent=W.invite;$('#cpl').textContent=W.groom.en+' & '+W.bride.en;
+  $('#cplu').textContent=W.groom.ur+' اور '+W.bride.ur;$('#msg').textContent=W.message;
+  $('#fam').textContent=W.families;$('#rsvp').textContent=W.rsvp;
+  $('#ev').innerHTML=W.events.map((e,i)=>`<div class="evc rv" style="--d:${.8+i*4}s">
+    <h2>${e.en}</h2><p class="ur">${e.ur}</p><div class="line" style="--d:${1.4+i*4}s"></div>
+    <p class="d">${e.date}</p><p class="ur" style="font-size:1rem">${e.dateUr}</p>
+    <p class="v">${e.time}</p><p class="ur" style="font-size:1rem">${e.timeUr}</p>
+    <p class="d" style="font-size:1.1rem;margin-top:.5rem">${e.venue}</p><p class="a">${e.address}</p>
+    ${e.map?`<a href="${e.map}" target="_blank" rel="noopener">VIEW MAP</a>`:''}</div>`).join('');
+}
+fill();
+/* ---- golden particles ---- */
+const cv=$('#fx'),cx=cv.getContext('2d');let PW,PH,P=[],boost=1;
+function size(){const d=Math.min(devicePixelRatio||1,2);PW=innerWidth;PH=innerHeight;cv.width=PW*d;cv.height=PH*d;cx.setTransform(d,0,0,d,0,0)}
+addEventListener('resize',size);size();
+for(let i=0;i<90;i++)P.push({x:Math.random()*PW,y:Math.random()*PH,r:Math.random()*2.2+.5,v:Math.random()*.5+.15,p:Math.random()*6.3,s:Math.random()*.03+.01,dx:(Math.random()-.5)*.3});
+(function loop(){cx.clearRect(0,0,PW,PH);
+  for(const q of P){q.y-=q.v*boost;q.x+=q.dx+Math.sin(q.p)*.2;q.p+=q.s;if(q.y<-10){q.y=PH+10;q.x=Math.random()*PW}
+    const a=.35+.65*Math.abs(Math.sin(q.p*2));
+    cx.fillStyle=`rgba(243,226,160,${a*.12})`;cx.beginPath();cx.arc(q.x,q.y,q.r*4,0,6.3);cx.fill();
+    cx.fillStyle=`rgba(255,223,120,${a})`;cx.beginPath();cx.arc(q.x,q.y,q.r,0,6.3);cx.fill();}
+  requestAnimationFrame(loop)})();
+/* ---- music (synthesised in-browser, no files) ---- */
+let ac,master,musicOn=false,bells;
+function startMusic(){
+  try{ac=new (window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=0;master.connect(ac.destination);
+  [73.4,146.8,220,293.7,369.99,440].forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain(),l=ac.createOscillator(),lg=ac.createGain();
+    o.type=i%2?'sine':'triangle';o.frequency.value=f;g.gain.value=.05/(1+i*.4);l.frequency.value=.07+i*.03;lg.gain.value=.02;
+    l.connect(lg);lg.connect(g.gain);o.connect(g);g.connect(master);o.start();l.start()});
+  const sc=[587.3,659.3,740,880,987.8,1174.7];
+  bells=setInterval(()=>{if(!musicOn)return;const o=ac.createOscillator(),g=ac.createGain(),t=ac.currentTime;
+    o.type='sine';o.frequency.value=sc[Math.floor(Math.random()*sc.length)];
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.09,t+.02);g.gain.exponentialRampToValueAtTime(.0005,t+3.2);
+    o.connect(g);g.connect(master);o.start(t);o.stop(t+3.3)},1900);
+  setMusic(true)}catch(e){}}
+function setMusic(on){musicOn=on;if(!ac)return;
+  if(on){ac.resume();master.gain.cancelScheduledValues(ac.currentTime);master.gain.linearRampToValueAtTime(.8,ac.currentTime+3)}
+  else{master.gain.cancelScheduledValues(ac.currentTime);master.gain.linearRampToValueAtTime(0,ac.currentTime+.6);setTimeout(()=>{if(!musicOn)ac.suspend()},700)}
+  $('#mus').textContent=on?'♪ Music on':'♪ Music off'}
+$('#mus').onclick=()=>ac?setMusic(!musicOn):startMusic();
+/* ---- cinematic timeline ---- */
+const scenes=[...document.querySelectorAll('.scene')];let timers=[];
+function show(id){scenes.forEach(s=>s.classList.toggle('on',s.id===id))}
+function at(ms,fn){timers.push(setTimeout(fn,ms))}
+function play(){
+  timers.forEach(clearTimeout);timers=[];boost=1;
+  $('#frame').classList.remove('show');void $('#frame').offsetWidth;
+  $('#ctl').classList.add('show');
+  show('none');
+  at(1500,()=>{$('#frame').classList.add('show');boost=1.6});
+  at(2600,()=>{boost=1;show('s1')});
+  at(10500,()=>show('s2'));
+  at(19500,()=>show('s3'));
+  at(28500,()=>show('s4'));
+  at(41500,()=>{show('s5');boost=2.2});
+  at(48000,()=>{boost=1.2});
+}
+$('#go').onclick=()=>{if(!ac)startMusic();play()};
+const replay=()=>{if(ac&&!musicOn)setMusic(true);play()};
+$('#rep').onclick=replay;$('#rep2').onclick=replay;
+</script>
+</body>
+</html>
